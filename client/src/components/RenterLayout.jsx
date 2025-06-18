@@ -1,15 +1,13 @@
 import React from "react";
-import UserNavbar from "./UserNavbar";
+import RenterNavbar from "./RenterNavbar";
 import { Outlet } from "react-router-dom";
 import Cookies from "js-cookie"; // Make sure to install js-cookie package
 import { useEffect } from "react";
 import Loading from "./Loading"; // Assuming you have a Loading component for loading state
-import Footer from "./Footer";
-import Menu from "./Menu";
 
 
 
-function UserLayout() {
+function RenterLayout() {
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     const cookies = Cookies.get("token");
@@ -28,15 +26,14 @@ function UserLayout() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-red-400 to-orange-500 min-h-screen">
+    <div className="bg-gradient-to-br from-red-400 to-blue-500 min-h-screen">
 
-      <UserNavbar />
-      <Menu />
-      <Outlet /> // Render the nested routes
-      <Footer />
+      <RenterNavbar />
+
+      <Outlet />
       
     </div>
   );
 }
 
-export default UserLayout;
+export default RenterLayout;

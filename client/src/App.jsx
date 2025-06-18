@@ -5,19 +5,34 @@ import Signup from "./pages/Sign-up/signup";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UserDashboard from "./pages/Users/Dashboard/UserDashboard";
 import UserLayout from "./components/UserLayout";
+import RenterLayout from "./components/RenterLayout";
 import Profile from "./pages/Users/Profile/Profile";
+import CreateTurf from "./pages/Renter/CreateTurf/CreateTurf"
+import Turf from "./pages/Turf/Turf";
+import Filter from "./pages/Filter/Filter"
+ 
 
 function App() {
   const router = createBrowserRouter([
     { path: "/Signin", element: <Signin /> },
     { path: "/Signup", element: <Signup /> },
     { path: "/Dashboard", element: <Dashboard /> },
-    {
-      path: "/User",
+    {path:"/Filter",element:<Filter />},
+    {  path: "/User",
       element: <UserLayout />,
       children: [
         { path: "Dashboard", element: <UserDashboard /> },
         { path: "profile", element: <Profile /> },
+        
+      ],
+    },
+    {
+      path: "/Renter",
+      element: <RenterLayout />,
+      children: [
+        { path: "turf/gallery", element: <Turf /> },
+        { path: "turf/create", element: <CreateTurf /> },
+        {}
       ],
     },
     // for the role of user

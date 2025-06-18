@@ -147,4 +147,41 @@ const changePassword = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-export default { create, login, dashboard, profile, changePassword };
+
+const NewMail = async (req, res) => {
+  // This function can be implemented to handle password changes
+  // It would typically involve verifying the user's identity and updating the password in the database
+  // For now, we can leave it as a placeholder
+  try {
+    console.log("Change email functionality is not yet implemented.");
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "Please login" });
+    }
+    
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+    const user = await User.findById(decoded.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    
+    }
+    
+    
+    const { newEmail } = req.body; 
+     if(!newEmail ){
+      console.log(newEmail)
+      return res.status(400).json({ message: "New email is required" });
+     }; 
+   
+    user.email = newEmail; // Update the user's password
+    await user.save(); // Save the updated user document
+    res.status(200).json({ message: "email changed successfully" });
+
+  } catch (error) {
+    console.error("Error changing email:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export default { create, login, dashboard, profile, changePassword, NewMail };

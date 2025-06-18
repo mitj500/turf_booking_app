@@ -9,7 +9,6 @@ function signup() {
     const [role, Setrole] = React.useState("user");
 
 
-
     function handleSubmit(e) {
        axios.post("http://localhost:3000/user/create",{
         email: email,
@@ -31,6 +30,7 @@ function signup() {
 
 
   return (
+    <div className='bg-gradient-to-br from-blue-200 to-purple-500 '>
     <div className='h-screen flex flex-col items-center justify-center gap-3'>
         
         <input className='p-2 border bg-gray-300 rounded-lg text-black w-[200px]' type="text" placeholder='email' value={email} onChange={(e)=>Setemail(e.target.value)}/>
@@ -48,6 +48,7 @@ function signup() {
         <p>Already have an account? <a href="/signin">Sign In</a></p>
         <p>By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
         
+    </div>
     </div>
   )
 

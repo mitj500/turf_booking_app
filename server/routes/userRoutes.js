@@ -7,4 +7,6 @@ router.post("/login", userController.login)
 router.get("/dashboard", userController.dashboard)
 router.get("/profile", userController.profile)
 router.post("/changepassword", userController.changePassword)
+router.post("/changemail", userController.NewMail)
+
 export default router 

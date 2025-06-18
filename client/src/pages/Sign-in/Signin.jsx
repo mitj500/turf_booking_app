@@ -33,26 +33,28 @@ function signin() {
   }
 
   return (
-    <div>
-      <input
+    <div className="bg-gradient-to-br from-red-500 to-orange-500 ">
+    <div className=" flex flex-col items-center justify-center h-screen gap-3">
+      <input className='p-2 border bg-gray-300 rounded-lg text-black w-[200px]'
         type="text"
         placeholder="email"
         value={email}
         onChange={(e) => Setemail(e.target.value)}
       />
-      <input
+      <input className='p-2 border bg-gray-300 rounded-lg text-black w-[200px]'
         type={showPassword ? "text" : "password"}
         placeholder="password"
         value={password}
         onChange={(e) => Setpassword(e.target.value)}
       />
-      <button onClick={() => SetshowPassword(!showPassword)}>
+      <button onClick={() => SetshowPassword(!showPassword)} className='p-2 border bg-gray-300 rounded-lg text-black w-[200px]'>
         {showPassword ? "Hide Password" : "Show Password"}
       </button>
-      <button onClick={handleLogin}>Sign In</button>
+      <button onClick={handleLogin} className='p-2 border bg-gray-300 rounded-lg text-black w-[200px]'>Sign In</button>
       <p>
         Don't have an account? <a href="/signup">Sign Up</a>
       </p>
+    </div>
     </div>
   );
 }

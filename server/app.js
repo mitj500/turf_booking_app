@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import "./config/db.js";
 import userRoutes from "./routes/userRoutes.js"
+import turfRoutes from "./routes/turfRoutes.js"
 import User from "./models/User.js"; // Adjust the path as necessary
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(
 ); // Tells express to allow requests from all URLs
 
 app.use("/user", userRoutes)
+app.use("/turf", turfRoutes)
 
 
 // Example route to handle user creation
