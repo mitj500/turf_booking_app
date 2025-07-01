@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import Cookies from 'js-cookie'; // Make sure to install js-cookie package
+import ParallaxPage from '../ParallaxPage/Paralax';
 function Dashboard() {
 
     const [msg, setMsg] = React.useState("");
@@ -30,6 +31,7 @@ function Dashboard() {
         <p>Follow us on <a href="/social">Social Media</a> for updates.</p>
         <p>Check out our <a href="/blog">Blog</a> for the latest news and tips.</p>
         <p>Explore our <a href="/features">Features</a> to get the most out of your account.</p>
+        <ParallaxPage />
     </div>
   )
 }

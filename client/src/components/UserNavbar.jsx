@@ -20,7 +20,7 @@ function UserNavbar() {
         <a href="/user/profile" className="hover:text-gray-400">
           Profile
         </a>
-        <a href="/turf" className="hover:text-gray-400">
+        <a href="/user/turf" className="hover:text-gray-400">
           Turf
         </a>
       </div>

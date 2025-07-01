@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import Cookies from "js-cookie"; // Make sure to install js-cookie package
 import { useEffect } from "react";
 import Loading from "./Loading"; // Assuming you have a Loading component for loading state
-
+import Paralax from "../pages/ParallaxPage/Paralax";
 
 
 function RenterLayout() {
@@ -29,7 +29,7 @@ function RenterLayout() {
     <div className="bg-gradient-to-br from-red-400 to-blue-500 min-h-screen">
 
       <RenterNavbar />
-
+      <Paralax/>
       <Outlet />
       
     </div>

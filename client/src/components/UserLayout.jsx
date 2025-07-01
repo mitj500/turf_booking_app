@@ -32,6 +32,8 @@ function UserLayout() {
 
       <UserNavbar />
       <Menu />
+      
+      
       <Outlet /> // Render the nested routes
       <Footer />
       

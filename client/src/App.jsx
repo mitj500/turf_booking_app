@@ -10,6 +10,8 @@ import Profile from "./pages/Users/Profile/Profile";
 import CreateTurf from "./pages/Renter/CreateTurf/CreateTurf"
 import Turf from "./pages/Turf/Turf";
 import Filter from "./pages/Filter/Filter"
+import GalleryCard from "./components/GalleryCard";
+import GalleryPage from "./pages/GalleryPage/GalleryPage";
  
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
       children: [
         { path: "Dashboard", element: <UserDashboard /> },
         { path: "profile", element: <Profile /> },
+        { path: "turf", element: <Turf /> },
+        
         
       ],
     },
