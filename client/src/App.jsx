@@ -34,6 +34,7 @@ function App() {
       path: "/Renter",
       element: <RenterLayout />,
       children: [
+        
         { path: "turf/gallery", element: <Turf /> },
         { path: "turf/create", element: <CreateTurf /> },
         {}

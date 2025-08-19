@@ -1,0 +1,34 @@
+.hover-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 0.75rem;
+  background: linear-gradient(45deg, #f00, #0f0, #00f, #f00);
+  background-size: 400% 400%;
+  animation: spin-border 6s linear infinite;
+  z-index: -1;
+}
+
+.hover-border::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 0.75rem;
+  background: linear-gradient(45deg, #f00, #0f0, #00f, #f00);
+  background-size: 400% 400%;
+  filter: blur(10px);
+  animation: spin-border 6s linear infinite;
+  z-index: -2;
+}
+
+@keyframes spin-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
